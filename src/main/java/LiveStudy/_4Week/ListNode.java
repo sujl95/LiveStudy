@@ -14,11 +14,11 @@ public class ListNode {
     private int size = 0;
 
 
-    ListNode() {
+    public ListNode() {
         headCk = true;
     }
 
-    ListNode(int data) {
+    public ListNode(int data) {
         this.data = data;
     }
 
@@ -34,13 +34,14 @@ public class ListNode {
             ListNode temp = head.next;
             head.next = nodeToAdd;
             nodeToAdd.next = temp;
+            size++;
             return nodeToAdd;
         }
         if (head.next != null) {
             return add(head.next, nodeToAdd, position-1);
         }
-        head.next = nodeToAdd;
         size++;
+        head.next = nodeToAdd;
         return nodeToAdd;
     }
 
@@ -66,12 +67,14 @@ public class ListNode {
         temp1.next = null;
         size--;
         return head;
+//        return temp1;
     }
 
     public boolean contains(ListNode head, ListNode nodeToCheck) {
         ListNode temp = head.next;
-        if (temp == null) return contains(temp, nodeToCheck);
-        else return true;
+        if (temp == null) return false;
+        if(temp.data == nodeToCheck.data) return true;
+        else return contains(temp, nodeToCheck);
     }
 
     @Override
@@ -87,5 +90,9 @@ public class ListNode {
 
     public int getSize() {
         return size;
+    }
+
+    public int getData() {
+        return data;
     }
 }

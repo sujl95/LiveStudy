@@ -1,3 +1,4 @@
+import LiveStudy._4Week.ListNode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kohsuke.github.*;
@@ -9,6 +10,7 @@ import java.util.*;
 
 
 import static org.kohsuke.github.GHIssueState.ALL;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TestController {
@@ -84,5 +86,37 @@ public class TestController {
                 }
         );
 
+    }
+
+    @Test
+    @DisplayName("LinkedListTest")
+    void LinkedListTest() {
+        ListNode head = new ListNode();
+
+        head.add(head , new ListNode(5), 1);
+        head.add(head , new ListNode(6), 2);
+        head.add(head , new ListNode(7), 3);
+        head.remove(head, 3);
+        head.remove(head, 5);
+        System.out.println(head.contains(head, new ListNode(5)));
+        System.out.println(head.contains(head, new ListNode(3)));
+        System.out.println(head.contains(head, new ListNode(7)));
+        System.out.println(head.getSize());
+        System.out.println(head.toString());
+
+    }
+
+    @Test
+    @DisplayName("add Test")
+    void LinkedListAddTest() {
+        ListNode head = new ListNode();
+        ListNode data = new ListNode(5);
+        ListNode newData = new ListNode(7);
+
+
+//        head.add(head , new ListNode(5), 1);
+//        head.add(head , new ListNode(6), 2);
+//        head.add(head , new ListNode(7), 3);
+        head.add(head, new ListNode(5), 1);
     }
 }
