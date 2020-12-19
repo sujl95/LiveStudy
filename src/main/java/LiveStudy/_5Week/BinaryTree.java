@@ -19,7 +19,7 @@ public class BinaryTree {
     public void dfs(Node root) {
         if (root == null) return;
         dfs(root.getLeft());
-        System.out.println(root.getValue()+" ");
+        System.out.print(root.getValue()+" ");
         dfs(root.getRight());
     }
 
@@ -28,7 +28,7 @@ public class BinaryTree {
         q.offer(root);
         while (!q.isEmpty()) {
             Node node = q.poll();
-            System.out.println(node.getValue()+" ");
+            System.out.print(node.getValue()+" ");
             if (node.getLeft() != null)
                 q.offer(node.getLeft());
             if (node.getRight() != null)
