@@ -5,6 +5,7 @@ plugins {
 group 'me.thewing'
 version '1.0-SNAPSHOT'
 sourceCompatibility = '11'
+targetCompatibility = '11'
 
 repositories {
     mavenCentral()
